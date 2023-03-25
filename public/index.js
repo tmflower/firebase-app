@@ -14,10 +14,10 @@ console.log(itemsInDb)
 const userInput = document.getElementById("input-field");
 
 const addButton = document.getElementById("add-button");
-const shoppingList = document.getElementById("shopping-list");
+const taskList = document.getElementById("list");
 
 function addListItem(inputVal) {
-	shoppingList.innerHTML += `<li>${inputVal}</li>`
+	taskList.innerHTML += `<li>☐ ${inputVal}</li>`
 }
 
 function clearInput() {
