@@ -43,6 +43,7 @@ button {
 	font-size: 20px;
 	font-family: 'Lexend', sans-serif;
 	padding: 15px;
+	margin-bottom: 8px;
 }
 
 button:hover {
@@ -71,8 +72,6 @@ ul li {
 	text-align: center;
 }
 
-ul li:hover {
-	color: gray;
-	background-color:rgb(180, 177, 177);
-    transition: .5s;
+#message {
+	text-align: center;
 }

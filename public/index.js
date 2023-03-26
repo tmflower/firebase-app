@@ -9,15 +9,15 @@ const app = initializeApp(appSettings);
 const database = getDatabase(app);
 const tasksInDb = ref(database, "Tasks");
 
-console.log(tasksInDb)
-
 const userInput = document.getElementById("input-field");
 
 const addButton = document.getElementById("add-button");
 const taskList = document.getElementById("list");
+const message = document.getElementById("message");
 
 onValue(tasksInDb, function(snapshot) {
 	if (snapshot.val()) {
+
 		let tasksArr = Object.entries(snapshot.val());
 		clearTaskList();
 		for (let task of tasksArr) {
@@ -25,12 +25,21 @@ onValue(tasksInDb, function(snapshot) {
 			let currentTask = task[1];
 			appendTaskToList(currentId, currentTask);
 		}
+		message.innerHTML = 'Tap a task to remove it.';
 	}
 	else {
+		message.innerHTML = '';
 		taskList.innerHTML = `🥳🎉 You have no tasks! 👏😃`;
 	}
-
 });
+
+// function showMessage() {
+// 	const currentDiv = document.getElementById("message");
+// 	const newDiv = document.createElement("div");
+// 	const newMessage = document.createTextNode("Tap a task to remove it.");
+// 	currentDiv.appendChild(newDiv);
+// 	newDiv.appendChild(newMessage);
+// }
 
 function clearInput() {
 	userInput.value = "";
