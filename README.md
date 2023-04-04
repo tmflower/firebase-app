@@ -9,7 +9,7 @@ So I started with this basic, boring, uninspired mini-project just to see if I c
 - HTML
 - CSS
 - Javascript
-- Firestore (data storage)
+- Realtime Database (data storage)
 - Firebase (hosting)
 
 ## Live link
